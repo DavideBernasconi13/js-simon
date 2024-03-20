@@ -30,15 +30,20 @@ function getRandomNumber(numMin, numMax) {
         // controlla se non è nell'array e lo pusha
         if (!numberRandom.includes(number)) {
             numberRandom.push(number);
+            draw(numberRandom[i]);
         }
     }
     console.log(numberRandom);
-    draw(numeroMaxGenerate, numberRandom[0]);
+
+    //numberRandom.forEach(draw(numberRandom));
+
+
+
 
 
 }
 //funzione per disegnare i quadrati
-function draw(maxSquare, numeroPrint) {
+function draw(numeroPrint) {
     let square;
     for (let i = 1; i < maxSquare; i++) {
         // crea l'elemento html 

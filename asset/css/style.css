@@ -26,5 +26,12 @@
 .square {
     width: 80px;
     height: 80px;
-    border: 1px solid red;
+    background-color: coral;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 10px;
 }
