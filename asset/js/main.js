@@ -13,7 +13,8 @@ btn.addEventListener('click', () => {
 
 //funzione del gioco
 function play() {
-    getRandomNumber(1, 100)
+    getRandomNumber(1, 100);
+    nascondiNumero();
 }
 
 //funzione per generare i numeri casuali
@@ -26,35 +27,27 @@ function getRandomNumber(numMin, numMax) {
     //condizione mentre la linghezza dell'array è minore del numero di numeri da generare
     while (numberRandom.length < numeroMaxGenerate) {
         //genera un numero casuale
-        let number = parseInt(Math.random() * numMax - numMin);
+        let number = parseInt(Math.random() * numMax + numMin);
         // controlla se non è nell'array e lo pusha
         if (!numberRandom.includes(number)) {
             numberRandom.push(number);
-            draw(numberRandom[i]);
+            // ciclare i numeri e metterli dentro ai quadrati
+            draw(number);
         }
     }
     console.log(numberRandom);
 
-    //numberRandom.forEach(draw(numberRandom));
-
-
-
-
-
 }
+
+
 //funzione per disegnare i quadrati
 function draw(numeroPrint) {
     let square;
-    for (let i = 1; i < maxSquare; i++) {
-        // crea l'elemento html 
-        square = document.createElement('div');
-        // assegna la classe
-        square.setAttribute('class', 'square');
-        //innerHTML del numero
-        square.innerHTML = numeroPrint;
-    }
-
-    console.log('Il valore di square è', square);
+    square = document.createElement('div');
+    // assegna la classe
+    square.setAttribute('class', 'square');
+    //innerHTML del numero
+    square.innerHTML = numeroPrint;;
 
     // prendi l'elemento html e appendo i quadrati
     let el = document.getElementById('tableOfGame');
@@ -62,8 +55,16 @@ function draw(numeroPrint) {
     el.appendChild(square);
 
 }
-// ciclare i numeri e metterli dentro ai quadrati
+
 //funzione settimeout
+function nascondiNumero() {
+    let nascondi = document.querySelectorAll('.square');
+    console.log(nascondi);
+    for (let i = 0; i < nascondi.length; i++) {
+        nascondi[i].classList.add('d-none');
+    }
+    return nascondi;
+}
 //funzione mostra caselle di input e pulsante submit
 // crea un nuovo array e confrontalo con l'array del pc
 // restituisci risultato

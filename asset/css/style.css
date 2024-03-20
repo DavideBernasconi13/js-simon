@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.d-none {
+    display: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,6 +25,15 @@
     padding: 20px 0;
     text-align: center;
     cursor: pointer;
+}
+
+#tableOfGame {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .square {
