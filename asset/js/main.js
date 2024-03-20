@@ -14,8 +14,9 @@ btn.addEventListener('click', () => {
 //funzione del gioco
 function play() {
     getRandomNumber(1, 100);
-    setTimeout(nascondiNumero(), 1000);
+    setTimeout(nascondiNumero, 3000);
     console.log("crash");
+    setTimeout(spiegaGioco, 3000);
 }
 
 //funzione per generare i numeri casuali
@@ -34,6 +35,7 @@ function getRandomNumber(numMin, numMax) {
             numberRandom.push(number);
             // ciclare i numeri e metterli dentro ai quadrati
             draw(number);
+            setTimeout(userGame, 3000);
         }
     }
     console.log(numberRandom);
@@ -48,7 +50,7 @@ function draw(numeroPrint) {
     // assegna la classe
     square.setAttribute('class', 'square');
     //innerHTML del numero
-    square.innerHTML = numeroPrint;;
+    square.innerHTML = numeroPrint;
 
     // prendi l'elemento html e appendo i quadrati
     let el = document.getElementById('tableOfGame');
@@ -59,11 +61,26 @@ function draw(numeroPrint) {
 
 //funzione settimeout
 function nascondiNumero() {
-    let nascondi = document.querySelectorAll('.square');
+    let nascondi = document.getElementById('tableOfGame');
     console.log(nascondi);
-    nascondi.innerHTML = '';
-    console.log(nascondi);
+    nascondi.classList.add('d-none');
+    nascondi.classList.remove('d-flex');
 }
 //funzione mostra caselle di input e pulsante submit
+function userGame() {
+    let input;
+    input = document.createElement('input');
+    input.setAttribute('class', 'input');
+
+    let userInput = document.getElementById('userGame');
+    userInput.classList.add('d-flex');
+    userInput.appendChild(input);
+}
+
+//funzione spiega il gioco e stampa button per leggere i dati
+function spiegaGioco() {
+    document.getElementById('spiegaGioco').innerText = `Inserisci i numeri appena visti`;
+    // btnUser.innerHTML = "Invia i numeri";
+}
 // crea un nuovo array e confrontalo con l'array del pc
 // restituisci risultato

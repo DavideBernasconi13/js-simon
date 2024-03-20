@@ -7,6 +7,11 @@
 
 .d-none {
     display: none;
+    border: 1px solid red;
+}
+
+.d-flex {
+    display: flex;
 }
 
 .container {
@@ -27,8 +32,9 @@
     cursor: pointer;
 }
 
-#tableOfGame {
-    display: flex;
+#tableOfGame,
+#userGame,
+#spiegaGioco {
     flex-direction: row;
     gap: 30px;
     width: 50%;
@@ -36,7 +42,14 @@
     justify-content: center;
 }
 
-.square {
+#spiegaGioco {
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.square,
+input.input {
     width: 80px;
     height: 80px;
     background-color: coral;
@@ -47,4 +60,8 @@
     font-size: 1.5rem;
     font-weight: 800;
     border-radius: 10px;
+}
+
+input {
+    border: none;
 }
