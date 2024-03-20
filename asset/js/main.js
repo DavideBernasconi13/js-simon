@@ -33,7 +33,7 @@ function getRandomNumber(numMin, numMax) {
         }
     }
     console.log(numberRandom);
-    draw(numeroMaxGenerate, numberRandom[8]);
+    draw(numeroMaxGenerate, numberRandom[0]);
 
 
 }
