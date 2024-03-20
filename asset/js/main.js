@@ -14,7 +14,8 @@ btn.addEventListener('click', () => {
 //funzione del gioco
 function play() {
     getRandomNumber(1, 100);
-    nascondiNumero();
+    setTimeout(nascondiNumero(), 1000);
+    console.log("crash");
 }
 
 //funzione per generare i numeri casuali
@@ -60,10 +61,8 @@ function draw(numeroPrint) {
 function nascondiNumero() {
     let nascondi = document.querySelectorAll('.square');
     console.log(nascondi);
-    for (let i = 0; i < nascondi.length; i++) {
-        nascondi[i].classList.add('d-none');
-    }
-    return nascondi;
+    nascondi.innerHTML = '';
+    console.log(nascondi);
 }
 //funzione mostra caselle di input e pulsante submit
 // crea un nuovo array e confrontalo con l'array del pc
