@@ -33,17 +33,28 @@ function getRandomNumber(numMin, numMax) {
         }
     }
     console.log(numberRandom);
+    draw(numeroMaxGenerate, numberRandom[8]);
 
 
 }
 //funzione per disegnare i quadrati
 function draw(maxSquare, numeroPrint) {
-    // crea l'elemento html 
-    // assegna la classe
-    //innerHTML del numero
+    let square;
+    for (let i = 1; i < maxSquare; i++) {
+        // crea l'elemento html 
+        square = document.createElement('div');
+        // assegna la classe
+        square.setAttribute('class', 'square');
+        //innerHTML del numero
+        square.innerHTML = numeroPrint;
+    }
 
-    // prendi l'elemento html
-    //appendi i quadrati 
+    console.log('Il valore di square è', square);
+
+    // prendi l'elemento html e appendo i quadrati
+    let el = document.getElementById('tableOfGame');
+    console.log(el);
+    el.appendChild(square);
 
 }
 // ciclare i numeri e metterli dentro ai quadrati
